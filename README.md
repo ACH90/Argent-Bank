@@ -10,3 +10,16 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+INSTALLER REDUX \*
+
+npm install redux react-redux @reduxjs/toolkit
+
+Télécharger Redux DevTools sur google
+
+
+1-- Provider qui englobe l'app
+2-- Création store
+3-- Création reducers
+4-- Création actions
