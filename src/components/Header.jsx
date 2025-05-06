@@ -1,8 +1,8 @@
 import React from "react";
-// import { useSelector, useDispatch } from "react-redux";
-// import { Link, useNavigate } from "react-router-dom";
-// import Logo from "/src/assets/images/argentBankLogo.png";
-// import { logout } from "../actions/auth.actions";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import Logo from "/src/assets/images/argentBankLogo.png";
+import { logout } from "../actions/auth.actions";
 
 function Header() {
   /* Updates user data on header component from state redux */
@@ -20,13 +20,28 @@ function Header() {
   //   };
   return (
     <header>
-      <h1 className="sr-only">Argent Bank</h1>
-      <p>djkdslqdsq</p>
-      {/* <nav>
+      {/* <h1 className="sr-only">Argent Bank</h1> */}
+      {/* <nav class="main-nav">
+        <a class="main-nav-logo" href="./index.html">
+          <img
+            class="main-nav-logo-image"
+            src="./img/argentBankLogo.png"
+            alt="Argent Bank Logo"
+          />
+          <h1 class="sr-only">Argent Bank</h1>
+        </a>
+        <div>
+          <a class="main-nav-item" href="./sign-in.html">
+            <i class="fa fa-user-circle"></i>
+            Sign In
+          </a>
+        </div>
+      </nav> */}
+      <nav className="main-nav">
         <Link to="/">
-          <img src={Logo} alt="Bank Logo" />
+          <img className="main-nav-logo-image" src={Logo} alt="Bank Logo" />
         </Link>
-        {isConnected ? (
+        {/* {isConnected ? (
           <div className="connected">
             <Link to="/profile">
               <i className="fa-solid fa-2x fa-circle-user" />
@@ -40,12 +55,12 @@ function Header() {
         ) : (
           <div className="not-connected">
             <Link to="/login">
-              <i className="fa-solid fa-circle-user"></i>
+              <i className="fa fa-user-circle""></i>
               <p>Sign In</p>
             </Link>
           </div>
-        )}
-      </nav> */}
+        )} */}
+      </nav>
     </header>
   );
 }
