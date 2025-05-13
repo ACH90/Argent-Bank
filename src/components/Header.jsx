@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "/src/assets/images/argentBankLogo.png";
-import { logout } from "../features/auth/authSlice.js";
+import { logout } from "../utils/logout";
 
 function Header() {
   /* Updates user data on header component from state redux */

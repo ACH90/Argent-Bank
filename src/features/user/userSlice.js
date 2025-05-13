@@ -85,6 +85,10 @@ const userSlice = createSlice({
     setUserData: (state, action) => {
       state.userData = action.payload;
     },
+    logout: (state) => {
+      state.userData = null; // Réinitialisation des données utilisateur dans le store `user`
+      localStorage.removeItem("userData"); // Suppression des données du localStorage
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -107,5 +111,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { setUserData } = userSlice.actions;
+export const { setUserData, logout } = userSlice.actions;
 export default userSlice.reducer;
