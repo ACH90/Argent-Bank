@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
-import SignIn from "../pages/signIn";
-import User from "../pages/user";
+import SignIn from "../pages/SignIn";
+import User from "../pages/User";
 import Layout from "../layout/layout";
 import PrivateRoute from "./PrivateRoute";
 
