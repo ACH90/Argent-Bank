@@ -13,6 +13,7 @@ paths:
     post:
       tags:
         - User Module
+      # Titre
       summary: Login
       description: API for Login
       parameters:
@@ -393,9 +394,14 @@ definitions:
         type: string
       type:
         type: string
-        enum: [debit, credit]
+      category:
+        type: string
+        enum: [food, entertainment, travel, shopping]
       note:
         type: string
+      balance:
+        type: integer
+        format: float
 
   TransactionListResponse:
     type: object
