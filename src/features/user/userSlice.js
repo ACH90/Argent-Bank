@@ -25,7 +25,7 @@ export const fetchUserProfile = createAsyncThunk(
 
       const data = await response.json();
 
-      console.log("Data from fetchUserProfile:", data);
+      // console.log("Data from fetchUserProfile:", data);
 
       if (!response.ok) {
         return thunkAPI.rejectWithValue(

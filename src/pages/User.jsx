@@ -13,8 +13,11 @@ const User = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
+  // Nouveaux états pour les inputs du formulaire
+  const [inputFirstName, setInputFirstName] = useState("");
+  const [inputLastName, setInputLastName] = useState("");
+
   useEffect(() => {
-    // Vérifie si un token est présent et si les données utilisateur ne sont pas déjà chargées
     const token = localStorage.getItem("token");
     if (token && !userData) {
       dispatch(fetchUserProfile());
@@ -29,8 +32,24 @@ const User = () => {
   }, [userData]);
 
   const handleSave = () => {
-    dispatch(updateUserProfile({ firstName, lastName }));
+    dispatch(
+      updateUserProfile({ firstName: inputFirstName, lastName: inputLastName })
+    );
+    setFirstName(inputFirstName); // mettre à jour les noms affichés
+    setLastName(inputLastName);
+    setInputFirstName(""); // vider les inputs
+    setInputLastName("");
     setIsEditing(false);
+  };
+
+  const handleCancel = () => {
+    setInputFirstName("");
+    setInputLastName("");
+    setIsEditing(false);
+  };
+
+  const handleEdit = () => {
+    setIsEditing(true);
   };
 
   if (status === "loading") {
@@ -41,7 +60,6 @@ const User = () => {
     return <p>Error: {error}</p>;
   }
 
-  // Vérification si userData existe avant de tenter d'y accéder
   if (!userData) {
     return <p>No user data available</p>;
   }
@@ -52,26 +70,31 @@ const User = () => {
         <h1>
           Welcome back
           <br />
-          {userData.firstName ? userData.firstName : ""}{" "}
-          {userData.lastName || ""}!
+          {firstName} {lastName}!
         </h1>
         {isEditing ? (
-          <div>
-            <input
-              type="text"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-            <input
-              type="text"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-            <button onClick={handleSave}>Save</button>
-            <button onClick={() => setIsEditing(false)}>Cancel</button>
+          <div className="editForm">
+            <div>
+              <input
+                type="text"
+                value={inputFirstName}
+                placeholder="First Name"
+                onChange={(e) => setInputFirstName(e.target.value)}
+              />
+              <input
+                type="text"
+                value={inputLastName}
+                placeholder="Last Name"
+                onChange={(e) => setInputLastName(e.target.value)}
+              />
+            </div>
+            <div>
+              <button onClick={handleSave}>Save</button>
+              <button onClick={handleCancel}>Cancel</button>
+            </div>
           </div>
         ) : (
-          <button onClick={() => setIsEditing(true)} className="edit-button">
+          <button onClick={handleEdit} className="edit-button">
             Edit Name
           </button>
         )}
