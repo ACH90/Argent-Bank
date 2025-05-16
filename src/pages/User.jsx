@@ -65,7 +65,7 @@ const User = () => {
   }
 
   return (
-    <main className="main bg-dark">
+    <main className="UserMain bg-dark">
       <div className="header">
         <h1>
           Welcome back

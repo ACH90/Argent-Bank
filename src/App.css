@@ -15,6 +15,14 @@ body {
 
 .main {
   flex: 1;
+  /* display: flex;
+    justify-content: center; */
+}
+
+.SignInMain {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .bg-dark {
@@ -111,6 +119,26 @@ body {
   margin: 5px;
 }
 
+.connected {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  margin-right: 1rem;
+
+}
+
+.not-connected{
+
+      display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+
+
 @media (min-width: 920px) {
   .hero {
     height: 400px;
@@ -180,13 +208,13 @@ body {
   box-sizing: border-box;
   background-color: white;
   width: 300px;
-  margin: 0 auto;
-  margin-top: 3rem;
+  /* margin: 0 auto; */
+  margin: 4.5rem;
   padding: 2rem;
 }
 
 .sign-in-icon {
-  font-size: 5rem;
+  font-size: 2rem;
 }
 
 .input-remember {
@@ -211,6 +239,7 @@ body {
 .input-wrapper input {
   padding: 5px;
   font-size: 1.2rem;
+  border: groove;
 }
 
 
@@ -263,6 +292,11 @@ body {
 .header {
   color: #fff;
   margin-bottom: 2rem;
+}
+
+.header h1{
+  margin-top: 0px;
+  padding-top: 22px;
 }
 
 .transaction-button {
